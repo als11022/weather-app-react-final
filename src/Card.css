@@ -1,0 +1,27 @@
+.card {
+    margin: 50px 0 5px 0;
+  }
+  .card-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .day {
+    font-size: 20px;
+    font-weight: 700;
+    color: #17a2b8;
+  }
+  #day-icon {
+    height: 64px;
+    width: 64px;
+    margin: -5px;
+  }
+  .temp-high {
+    font-size: 18px;
+  }
+  .temp-low {
+    color: #ec6e4c;
+    font-size: 14px;
+    opacity: 0.5;
+  }
+  
