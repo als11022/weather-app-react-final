@@ -8,7 +8,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
-      <div className="container">
+<div className="container">
         <div className="weather-wrapper">
           <div className="weather-app">
             <Search />
@@ -17,7 +17,7 @@ function App() {
           </div>
           <Footer />
         </div>
-      </div>
+        </div>
     </div>
   );
 }
