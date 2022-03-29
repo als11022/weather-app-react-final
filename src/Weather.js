@@ -1,9 +1,25 @@
 import React from "react";
+import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
+  const apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
+  const units = "metric";
+  let city = "New York";
+  let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   return (
     <div className="Weather">
+    <div className="Header">
+    <div className="overview">
+      <h1 id="city">New York</h1>
+      <ul>
+        <li>
+          Last updated: Friday, 17:30 <span id="date"></span>
+        </li>
+        <li id="description">Mostly Cloudy</li>
+      </ul>
+    </div>
+  </div>
       <div className="row">
         <div className="col-6">
           <div className="d-flex weather-temperature">

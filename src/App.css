@@ -2,6 +2,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.App {
+  max-width: 600px;
+  margin: 30px auto;
+
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -24,10 +30,7 @@ a:hover {
   text-decoration: underline;
   color: #17a2b8;
 }
-.weather-wrapper {
-  max-width: 600px;
-  margin: 30px auto;
-}
+
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;

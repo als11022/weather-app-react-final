@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import Search from "./Search";
-import Header from "./Header";
+
 import Weather from "./Weather";
 import Footer from "./Footer";
 
@@ -12,7 +12,7 @@ function App() {
         <div className="weather-wrapper">
           <div className="weather-app">
             <Search />
-            <Header />
+         
             <Weather />
           </div>
           <Footer />
