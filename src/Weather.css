@@ -39,4 +39,14 @@ h1 {
   .weather-temperature .active:hover {
     text-decoration: none;
   }
+
+  #search-button {
+    color: #fff;
+    background-color: #17a2b8;
+  }
+  #current-button {
+    color: #17a2b8;
+    font-size: 12px;
+  }
+  
   

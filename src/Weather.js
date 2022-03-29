@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ ready: false });
+const [city, setCity] = useState(props.defaultCity);
 
 function handleResponse(response) {
   setWeatherData({
@@ -17,61 +18,59 @@ function handleResponse(response) {
     wind: Math.round(response.data.wind.speed),
     description: response.data.weather[0].description,
     iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
-  })
-
+  });
 }
+
+function search(){
+  const apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
+  let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+  
+}
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
 if (weatherData.ready) {
 return (
   <div className="Weather">
-    <div className="Header">
-    <div className="overview">
-      <h1 id="city">{weatherData.city}</h1>
-      <ul>
-        <li>
-          <FormattedDate date={weatherData.date}/> <span id="date"></span>
-        </li>
-        <li className= "text-capitalize" id="description">{weatherData.description}</li>
-      </ul>
-    </div>
+  <form className="input-group" id="search-form" onSubmit={handleSubmit}>
+    <input
+      type="text"
+      className="form-control mb-3 "
+      placeholder="enter a city"
+      id="city-input"
+      autoComplete="off"
+      autoFocus="on"
+      onChange={handleCityChange}
+    />
+    <button
+      className="btn btn-outline-secondary mb-3"
+      type="submit"
+      id="search-button"
+    >
+      <i className="fas fa-search-location"></i>
+    </button>
+    <button
+      className="btn btn-outline-secondary mb-3"
+      type="button"
+      id="current-button"
+    >
+      <i className="fas fa-map-pin"></i> current location
+    </button>
+  </form>
+  <WeatherInfo data={weatherData} />
   </div>
-      <div className="row">
-        <div className="col-6">
-          <div className="d-flex weather-temperature">
-            <img
-              src={weatherData.iconUrl}
-              alt={weatherData.description}
-              className="float-left"
-            />
-            <div className="float-left">
-              <strong id="temperature">{weatherData.temperature}</strong>
-              <span className="units">°C</span>
-            </div>
-          </div>
-        </div>
-        <div className="col-6">
-          <ul>
-            <li>
-              Feels Like: <span id="feels-like">{weatherData.feel}</span> °C
-            </li>
-            <li>
-              Humidity: <span id="humidity">{weatherData.humidity}</span> %
-            </li>
-            <li>
-              Wind: <span id="wind">{weatherData.wind}</span> km/h
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
   );
 }
   else {
-    const apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
-    let city = props.defaultCity;
-    let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
-    
+    search();
+    return ("Loading...");
   }
 }
+
