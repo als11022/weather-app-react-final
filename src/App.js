@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import Search from "./Search";
-
 import Weather from "./Weather";
 import Footer from "./Footer";
 
@@ -12,8 +11,7 @@ function App() {
         <div className="weather-wrapper">
           <div className="weather-app">
             <Search />
-         
-            <Weather />
+            <Weather defaultCity="Berlin" />
           </div>
           <Footer />
         </div>

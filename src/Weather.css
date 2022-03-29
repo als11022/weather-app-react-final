@@ -9,6 +9,9 @@ h1 {
 .overview {
     margin-bottom: 20px;
   }
+  .overview ul {
+    padding: 0px;
+  }
   
   .weather-temperature img {
     margin-right: 5px;
