@@ -1,0 +1,39 @@
+ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    color: #878787;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 19px;
+  }
+  
+  li:first-letter {
+    text-transform: capitalize;
+  }
+  
+#city {
+    color: #ec6e4c;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  
+.overview {
+    margin-bottom: 20px;
+  }
+
+.overview ul {
+    padding: 0px;
+  }
+
+  #description {
+      color:#17a2b8;
+  }
+
+  #date {
+      font-weight: 550;
+  }
