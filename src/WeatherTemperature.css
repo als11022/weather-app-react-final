@@ -1,0 +1,12 @@
+.temperature {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  
+.units {
+    position: relative;
+    font-size: 16px;
+    top: -34px;
+    margin-left: 3px;
+  }
