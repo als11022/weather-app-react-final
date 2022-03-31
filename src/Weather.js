@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import WeeklyForecast from "./WeeklyForecast";
 
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ ready: false });
@@ -11,6 +12,7 @@ function handleResponse(response) {
   setWeatherData({
     ready: true,
     city: response.data.name,
+    coordinates: response.data.coord,
     date: new Date(response.data.dt * 1000),
     temperature: Math.round(response.data.main.temp),
     humidity: Math.round(response.data.main.humidity),
@@ -23,7 +25,8 @@ function handleResponse(response) {
 
 function search(){
   const apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
-  let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let units = "metric";
+  let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(handleResponse);
   
 }
@@ -65,6 +68,7 @@ return (
     </button>
   </form>
   <WeatherInfo data={weatherData} />
+  <WeeklyForecast coordinates={weatherData.coordinates} />
   </div>
   );
 }

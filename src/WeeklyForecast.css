@@ -6,22 +6,26 @@
     font-size: 20px;
     font-weight: 700;
   }
-  .day {
+  .ForecastDay {
     font-size: 20px;
     font-weight: 700;
     color: #17a2b8;
   }
-  #day-icon {
+ .ForecastIcons {
     height: 64px;
     width: 64px;
     margin: -5px;
   }
-  .temp-high {
+  .ForecastHigh {
     font-size: 18px;
+    font-weight: 600;
   }
-  .temp-low {
+  .ForecastLow {
     color: #ec6e4c;
     font-size: 14px;
     opacity: 0.5;
   }
   
+  #forecast {
+    text-align: center;
+  }
