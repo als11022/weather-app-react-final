@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import "./WeeklyForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -7,8 +7,11 @@ export default function WeeklyForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
+  useEffect(() => {
+      setLoaded(false);
+  }, [props.coordinates]);
+
 function handleResponse(response){
-  console.log(response.data.daily);
   setForecast(response.data.daily);
   setLoaded(true);
 }
@@ -22,9 +25,17 @@ if (loaded) {
             </div>
           <div className="card-body" id="forecast">
             <div className = "row">
-              <div className= "col">
-<WeatherForecastDay data={forecast[2]} />
+              {forecast.map(function(dailyForecast, index) {
+                if (index < 5){
+                return (
+              <div className= "col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
               </div>
+                );}
+                else {
+                  return null;
+                }
+              })}
             </div>
           </div>
       </div>
