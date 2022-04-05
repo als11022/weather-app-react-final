@@ -19,13 +19,13 @@ function handleResponse(response) {
     feel: Math.round(response.data.main.feels_like),
     wind: Math.round(response.data.wind.speed),
     description: response.data.weather[0].description,
-    iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    icon: response.data.weather[0].icon,
   });
 }
 
 function search(){
   const apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
-  let units = "metric";
+  let units = "imperial";
   let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(handleResponse);
   
