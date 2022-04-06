@@ -9,7 +9,7 @@
   .ForecastDay {
     font-size: 20px;
     font-weight: 700;
-    color: #69B5D3;
+    color: #4286EE;
   }
  .ForecastIcons {
     height: 64px;
@@ -27,9 +27,18 @@
   }
 
   .ForecastDescription {
-    font-size:10.5px;
+    font-size:9px;
   }
   
   #forecast {
     text-align: center;
   }
+
+  #forecastCard {
+    border: 1px solid #4286EE;
+  }
+
+  #dailyForecast {
+    background: white;
+  }
+  

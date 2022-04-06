@@ -12,7 +12,6 @@ export default function WeeklyForecast(props) {
   }, [props.coordinates]);
 
 function handleResponse(response){
-	console.log(response.data.daily)
   setForecast(response.data.daily);
   setLoaded(true);
 }
@@ -20,10 +19,8 @@ function handleResponse(response){
 if (loaded) {
   return (
     <div className="WeatherForecast">
-      <div className="card">
-          <div className="card-header">
-            5 Day Forecast
-            </div>
+      <div className="card" id="forecastCard">
+
           <div className="card-body" id="forecast">
             <div className = "row">
               {forecast.map(function(dailyForecast, index) {

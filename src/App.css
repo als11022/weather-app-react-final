@@ -1,8 +1,8 @@
-
 .App {
   font-family: Arial, Helvetica, sans-serif;
   max-width: 600px;
   margin: 30px auto;
+  color: #374151;
 }
 
 .weather-app-day {

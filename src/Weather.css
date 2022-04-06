@@ -6,11 +6,25 @@
 
   #search-button {
     color: #fff;
-    background-color: #17a2b8;
+    background-color: #4286EE;
   }
   #current-button {
-    color: #17a2b8;
+    color: #4286EE;
     font-size: 12px;
   }
   
-  
+  #sun {
+    border: 1px solid #F8B119;
+  }
+
+  #moon {
+    border: 1px solid #374151;
+  }
+
+  .sunTime {
+    font-weight: 550;
+  }
+
+  .moonTime {
+    font-weight: 550;
+  }

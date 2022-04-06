@@ -3,6 +3,8 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeeklyForecast from "./WeeklyForecast";
+import WeatherSun from "./WeatherSun";
+import WeatherMoon from "./WeatherMoon";
 
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ ready: false });
@@ -20,6 +22,8 @@ function handleResponse(response) {
     wind: Math.round(response.data.wind.speed),
     description: response.data.weather[0].description,
     icon: response.data.weather[0].icon,
+    sunrise: new Date(response.data.sys.sunrise * 1000),
+    sunset: new Date(response.data.sys.sunset * 1000),
   });
 }
 
@@ -53,22 +57,31 @@ return (
       onChange={handleCityChange}
     />
     <button
-      className="btn btn-outline-secondary mb-3"
+      className="btn btn-outline-secondary mb-3 w-25"
       type="submit"
       id="search-button"
-    >
+    >Search {" "} {" "}
       <i className="fas fa-search-location"></i>
-    </button>
-    <button
-      className="btn btn-outline-secondary mb-3"
-      type="button"
-      id="current-button"
-    >
-      <i className="fas fa-map-pin"></i> current location
     </button>
   </form>
   <WeatherInfo data={weatherData} />
   <WeeklyForecast coordinates={weatherData.coordinates} />
+  <div className= "row">
+    <div className= "col">
+        <div className="card" id="sun">
+          <div className="card-body">
+                <WeatherSun data={weatherData} />
+           </div>
+          </div>
+         </div>
+         <div className= "col">
+        <div className="card" id="moon">
+          <div className="card-body" >
+                <WeatherMoon coordinates={weatherData.coordinates} />
+           </div>
+          </div>
+         </div>
+        </div>
   </div>
   );
 }

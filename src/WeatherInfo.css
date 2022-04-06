@@ -4,7 +4,7 @@ ul {
   }
   li {
     list-style: none;
-    color: #878787;
+    color: #374151;
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
@@ -31,9 +31,23 @@ ul {
   }
 
   #description {
-      color:#69B5D3;
+      color:#4286EE;
   }
 
   #date {
       font-weight: 550;
+  }
+
+  .weatherInfo {
+    font-weight: 700;
+  }
+
+  .iconDescription {
+    display: inline;
+  }
+  
+  #mainIcon {
+      margin-top: -10px;
+      margin-left: 10px;
+    
   }

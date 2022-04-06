@@ -4,9 +4,10 @@
 
 .Footer a {
     text-decoration: none;
-    color: #69B5D3;
+    color: #4286EE;
 }
 
 .Footer a:hover {
     text-decoration: underline;
+    color: #F8B119;
 }

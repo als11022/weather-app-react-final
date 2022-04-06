@@ -20,16 +20,17 @@ export default function WeatherInfo(props){
           <div className="row">
             <div className="col-6">
               <div className="d-flex weather-temperature">
-                <div className="float-left"> 
+                <div className="float-left" id="mainIcon"> 
                 <WeatherIcon data={props.data.icon} alt={props.data.description} />
                 </div>
                 <div className="float-left">
-                    <WeatherTemperature celsius={props.data.temperature} />
+                    <WeatherTemperature fahrenheit={props.data.temperature} />
                 </div>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6" >
               <ul>
+              <span className="weatherInfo">
                 <li>
                   Feels Like: <span id="feels-like">{props.data.feel}</span> °F
                 </li>
@@ -39,6 +40,7 @@ export default function WeatherInfo(props){
                 <li>
                   Wind: <span id="wind">{props.data.wind}</span> mph
                 </li>
+              </span>
               </ul>
             </div>
           </div>
