@@ -26,6 +26,7 @@ return (
     <div>
     <WeatherIcon data={props.data.weather[0].icon} alt={props.data.description} />
     </div>
+    <div className="ForecastDescription">{props.data.weather[0].description}</div>
     <div className="ForecastHigh">
     {maxTemperature()}
     </div>
