@@ -11,7 +11,6 @@ export default function WeatherMoon(props) {
   }, [props.coordinates]);
 
 function handleResponse(response){
-    console.log(response.data.daily[0])
   setMoon({
       moonrise: new Date((response.data.daily[0].moonrise)*1000),
       moonset: new Date((response.data.daily[0].moonset)*1000),
