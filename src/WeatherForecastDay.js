@@ -23,10 +23,10 @@ function day() {
 return (
   <div className="WeatherForecastDay">
     <div className= "ForecastDay" >{day()}</div> 
-    <div>
+    <div className="ForecastIcons">
     <WeatherIcon data={props.data.weather[0].icon} alt={props.data.description} />
     </div>
-    <div className="ForecastDescription">{props.data.weather[0].description}</div>
+    <div className="ForecastDescription"><em>{props.data.weather[0].description}</em></div>
     <div className="ForecastHigh">
     {maxTemperature()}
     </div>

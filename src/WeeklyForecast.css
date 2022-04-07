@@ -11,14 +11,10 @@
     font-weight: 700;
     color: #4286EE;
   }
- .ForecastIcons {
-    height: 64px;
-    width: 64px;
-    margin: -5px;
-  }
+
   .ForecastHigh {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 450;
   }
   .ForecastLow {
     color: #F8B119;
@@ -27,7 +23,7 @@
   }
 
   .ForecastDescription {
-    font-size:9px;
+    font-size:10px;
   }
   
   #forecast {
@@ -35,7 +31,7 @@
   }
 
   #forecastCard {
-    border: 2px solid #374151;
+    border: 1.5px solid #374151;
   }
 
   #dailyForecast {

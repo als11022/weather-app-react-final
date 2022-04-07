@@ -24,19 +24,19 @@ export default function WeatherSun(props) {
 
                         <div className = "row">
                             <div className= "col-md text-center">
-                            <div>Sunrise</div>
+                            <div><strong>Sunrise</strong></div>
                             <img
                 src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunrise.svg"
                 alt="fahrenheit"
-                height="40" />
+                height="55" />
                             <div className="sunTime">{sunriseHours}:{sunriseMinutes} </div>
                             </div>
                             <div className= "col-md text-center">
-                            <div>Sunset</div>
+                            <div><strong>Sunset</strong></div>
                             <img
                 src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunset.svg"
                 alt="fahrenheit"
-                height="40" />
+                height="55" />
                             <div className="sunTime">{sunsetHours}:{sunsetMinutes} </div>
                             </div>
                 </div>

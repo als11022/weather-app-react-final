@@ -14,16 +14,16 @@ export default function WeatherInfo(props){
             <li>
             <span id="date"><FormattedDate date={props.data.date}/></span>
             </li>
-            <li className= "text-capitalize" id="description">{props.data.description}</li>
+            <li className= "text-capitalize" id="description"><em>{props.data.description}</em></li>
           </ul>
         </div>
           <div className="row">
             <div className="col-md-6">
-              <div className="d-flex weather-temperature">
+              <div className="d-flex mainContent">
                 <div className="float-left" id="mainIcon"> 
                 <WeatherIcon data={props.data.icon} alt={props.data.description} />
                 </div>
-                <div className="float-left">
+                <div className="float-left unitIcon">
                     <WeatherTemperature fahrenheit={props.data.temperature} />
                 </div>
               </div>

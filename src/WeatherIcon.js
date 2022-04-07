@@ -26,7 +26,7 @@ return (
     <img 
     src={`https://bmcdn.nl/assets/weather-icons/v2.0/fill/${codeMapping[props.data]}.svg`}
     alt={props.alt}
-    height="40"
+    height="55"
     className="weatherIcon" />
     
 );

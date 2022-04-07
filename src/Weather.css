@@ -1,28 +1,28 @@
 #search-button {
     color: #fff;
-    border: 2px solid #374151;
+    border: 1.5px solid #4286EE;
     background-color: #4286EE;
     margin-left: 15px;
   }
   
   #city-input {
-    border: 2px solid #374151;
+    border: 1.5px dotted #374151;
   }
 
   #sun {
-    border: 2px solid #F8B119;
+    border: 1.5px solid #F8B119;
   }
 
   #moon {
-    border: 2px solid #4286EE;
+    border: 1.5px solid #4286EE;
   }
 
   .sunTime {
-    font-weight: 550;
+    font-weight: 450;
   }
 
   .moonTime {
-    font-weight: 550;
+    font-weight: 450;
   }
 
   @media (max-width: 720px) {

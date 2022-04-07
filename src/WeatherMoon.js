@@ -39,19 +39,19 @@ if (loaded) {
     <div className="WeatherMoon">
 <div className = "row">
                             <div className= "col-md text-center">
-                            <div>Moonrise</div>
+                            <div><strong>Moonrise</strong></div>
                             <img
                 src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/moonrise.svg"
                 alt="fahrenheit"
-                height="40" />
+                height="55" />
                             <div className="moonTime">{moonriseHours}:{moonriseMinutes} </div>
                             </div>
                             <div className= "col-md text-center">
-                            <div>Moonset</div>
+                            <div><strong>Moonset</strong></div>
                             <img
                 src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/moonset.svg"
                 alt="fahrenheit"
-                height="40" />
+                height="55" />
                             <div className="moonTime">{moonsetHours}:{moonsetMinutes}</div>
                             </div>
                 </div>
