@@ -62,11 +62,27 @@ ul {
 
 
 @media (max-width: 720px) {
-h1, ul {
+h1, #date, #description {
   text-align: center;
 }
+.temperature {
+  font-size: 40px;
+}
 .mainContent {
-  margin: 10px 50px;
+  margin-left: 45px;
+}
+.weatherInfo {
+  text-align: center;
+  margin-left: -25px;
+}
+#mainIcon img{
+  height: 70px;
+}
+
+.units img {
+  height: 50px;
+  top: -10px;
+  margin-left: -10px;
 }
 
 

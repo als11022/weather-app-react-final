@@ -29,7 +29,7 @@ export default function WeatherInfo(props){
               </div>
             </div>
             <div className="col-md-6" >
-              <ul>
+              <ul className="weatherInfo">
               <span className="weatherInfo">
                 <li>
                   Feels Like: <span id="feels-like">{props.data.feel}</span> °F
