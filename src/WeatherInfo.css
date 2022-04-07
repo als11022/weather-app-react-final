@@ -6,7 +6,6 @@ ul {
     list-style: none;
     color: #374151;
     font-size: 16px;
-    font-weight: 100;
     line-height: 19px;
   }
   
@@ -32,14 +31,15 @@ ul {
 
   #description {
       color:#4286EE;
+      font-weight: 400;
   }
 
   #date {
       font-weight: 550;
   }
 
-  .weatherInfo {
-    font-weight: 700;
+ul li {
+    font-weight: 500;
   }
 
   .iconDescription {

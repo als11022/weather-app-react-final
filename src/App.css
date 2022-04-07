@@ -1,13 +1,17 @@
+
 .App {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 600px;
-  margin: 30px auto;
+  font-family: 'Poppins', sans-serif;
   color: #374151;
+  background: white;
+  padding: 40px;
+  
 }
 
 .weather-app-day {
+  margin: 0px auto;
+  max-width: 600px;
   padding: 20px;
-  border: 1px solid #dadde1;
+  border: 1px solid #374151;
   border-radius: 5px;
   background: white;
 }
@@ -15,7 +19,7 @@
 
 .weather-app-night {
   padding: 20px;
-  border: 1px solid #dadde1;
+  border: 1px solid #374151;
   border-radius: 5px;
   background: blue;
 }

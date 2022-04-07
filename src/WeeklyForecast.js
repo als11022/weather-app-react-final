@@ -20,7 +20,9 @@ if (loaded) {
   return (
     <div className="WeatherForecast">
       <div className="card" id="forecastCard">
-
+          <div className="card-header border-0 rounded" id="dailyForecast">
+            Daily Forecast
+            </div>
           <div className="card-body" id="forecast">
             <div className = "row">
               {forecast.map(function(dailyForecast, index) {
