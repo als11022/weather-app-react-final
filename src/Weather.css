@@ -1,24 +1,20 @@
-  .weather-temperature img {
-    margin-right: 10px;
-    height: 80px;
-    width: 80px;
-  }
-
-  #search-button {
+#search-button {
     color: #fff;
+    border: 2px solid #374151;
     background-color: #4286EE;
-  }
-  #current-button {
-    color: #4286EE;
-    font-size: 12px;
+    margin-left: 15px;
   }
   
+  #city-input {
+    border: 2px solid #374151;
+  }
+
   #sun {
-    border: 1px solid #F8B119;
+    border: 2px solid #F8B119;
   }
 
   #moon {
-    border: 1px solid #4286EE;
+    border: 2px solid #4286EE;
   }
 
   .sunTime {
@@ -27,4 +23,16 @@
 
   .moonTime {
     font-weight: 550;
+  }
+
+  @media (max-width: 720px) {
+    #search-button {
+      font-size: 12px;
+    }
+    .fas {
+      display: none;
+    }
+    #city-input {
+      font-size: 12px;
+    }
   }

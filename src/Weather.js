@@ -47,22 +47,26 @@ if (weatherData.ready) {
 return (
   <div className="Weather">
   <form className="input-group" id="search-form" onSubmit={handleSubmit}>
+    <div className="col-9">
     <input
       type="text"
-      className="form-control mb-3 "
+      className="form-control mb-3"
       placeholder="enter a city"
       id="city-input"
       autoComplete="off"
       autoFocus="on"
       onChange={handleCityChange}
     />
+    </div>
+    <div className="col-3">
     <button
-      className="btn btn-outline-secondary mb-3 w-25"
+      className="btn btn-outline-secondary mb-3"
       type="submit"
       id="search-button"
     >Search {" "} {" "}
       <i className="fas fa-search-location"></i>
     </button>
+    </div>
   </form>
   <WeatherInfo data={weatherData} />
   <WeeklyForecast coordinates={weatherData.coordinates} />

@@ -1,3 +1,7 @@
+ul li {
+  font-weight: 500;
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -8,11 +12,26 @@ ul {
     font-size: 16px;
     line-height: 19px;
   }
-  
+
+
   li:first-letter {
     text-transform: capitalize;
   }
   
+  .overview {
+      margin-bottom: 20px;
+    }
+    
+    .overview ul {
+      padding: 0px;
+    }
+
+    .weather-temperature img {
+      margin-right: 10px;
+      height: 80px;
+      width: 80px;
+    }
+    
 #city {
     color: #F8B119;
     font-size: 46px;
@@ -21,13 +40,6 @@ ul {
     margin-bottom: 0;
   }
   
-.overview {
-    margin-bottom: 20px;
-  }
-
-.overview ul {
-    padding: 0px;
-  }
 
   #description {
       color:#4286EE;
@@ -38,10 +50,6 @@ ul {
       font-weight: 550;
   }
 
-ul li {
-    font-weight: 500;
-  }
-
   .iconDescription {
     display: inline;
   }
@@ -49,5 +57,4 @@ ul li {
   #mainIcon {
       margin-top: -10px;
       margin-left: 10px;
-    
   }
