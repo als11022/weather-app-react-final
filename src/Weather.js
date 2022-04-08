@@ -22,8 +22,6 @@ function handleResponse(response) {
     wind: Math.round(response.data.wind.speed),
     description: response.data.weather[0].description,
     icon: response.data.weather[0].icon,
-    sunrise: new Date(response.data.sys.sunrise * 1000),
-    sunset: new Date(response.data.sys.sunset * 1000),
   });
 }
 
@@ -32,8 +30,8 @@ function search(){
   let units = "imperial";
   let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(handleResponse);
-  
 }
+
   function handleSubmit(event) {
     event.preventDefault();
     search(city);
@@ -74,7 +72,7 @@ return (
     <div className= "col">
         <div className="card" id="sun">
           <div className="card-body">
-                <WeatherSun data={weatherData} />
+                <WeatherSun coordinates={weatherData.coordinates} />
            </div>
           </div>
          </div>

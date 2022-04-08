@@ -1,45 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-export default function WeatherSun(props) {
-        let sunriseHours = props.data.sunrise.getHours();
-        if (sunriseHours<10){
-            sunriseHours = `0${sunriseHours}`;
-        }
-        let sunriseMinutes = props.data.sunrise.getMinutes();
-        if (sunriseMinutes <10) {
-            sunriseMinutes = `0${sunriseMinutes}` ;
-        }
+export default function WeatherMoon(props){
 
-        let sunsetHours = props.data.sunset.getHours();
-        if (sunsetHours<10){
-            sunsetHours = `0${sunsetHours}`;
-        }
-        let sunsetMinutes = props.data.sunset.getMinutes();
-        if (sunsetMinutes <10) {
-            sunsetMinutes = `0${sunsetMinutes}` ;
-        }
-            
-            return (
-                <div className="WeatherSun">
-
-                        <div className = "row">
-                            <div className= "col-md text-center">
-                            <div><strong>Sunrise</strong></div>
-                            <img
-                src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunrise.svg"
-                alt="fahrenheit"
-                height="55" />
-                            <div className="sunTime">{sunriseHours}:{sunriseMinutes} </div>
-                            </div>
-                            <div className= "col-md text-center">
-                            <div><strong>Sunset</strong></div>
-                            <img
-                src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunset.svg"
-                alt="fahrenheit"
-                height="55" />
-                            <div className="sunTime">{sunsetHours}:{sunsetMinutes} </div>
-                            </div>
-                </div>
+    const [loaded, setLoaded] = useState(false);
+    const [sun, setSun] = useState(null);
+  
+    useEffect(() => {
+        setLoaded(false);
+    }, [props.coordinates]);
+  
+    function handleResponse(response){
+        setSun({
+            sunrise: (response.data.sunrise),
+            sunset: (response.data.sunset),
+        })
+        setLoaded(true);
+    }
+  
+  if (loaded) {
+    return (
+        <div className="WeatherSun">
+        <div className = "row">
+            <div className= "col-md text-center">
+            <div><strong>Sunrise</strong></div>
+            <img
+src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunrise.svg"
+alt="fahrenheit"
+height="55" />
+            <div className="sunTime">{sun.sunrise}</div>
             </div>
-              );
-        }
+            <div className= "col-md text-center">
+            <div><strong>Sunset</strong></div>
+            <img
+src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/sunset.svg"
+alt="fahrenheit"
+height="55" />
+            <div className="sunTime">{sun.sunset} </div>
+            </div>
+</div>
+</div>
+    );
+  }
+  else {
+    const ipgKey = "0c0612e81a3143938de384004abcde1b"; 
+    let latitude= props.coordinates.lat;
+    let longitude= props.coordinates.lon;
+    let ipgUrl = `https://api.ipgeolocation.io/astronomy?apiKey=${ipgKey}&lat=${latitude}&long=${longitude}`;
+    axios.get(ipgUrl).then(handleResponse);
+    
+    return null;
+  }
+}
+

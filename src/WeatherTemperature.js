@@ -12,7 +12,7 @@ export default function WeatherTemperature(props) {
                 src= "https://bmcdn.nl/assets/weather-icons/v2.0/fill/thermometer-glass-fahrenheit.svg"
                 alt="fahrenheit"
                 height="40" 
-                class="unitIcon"
+                className="unitIcon"
                 />
             </span>
         </div>
