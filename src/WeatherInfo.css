@@ -12,6 +12,10 @@ ul {
     font-size: 16px;
     line-height: 19px;
   }
+  
+#date{
+  margin: 5px 0px;
+}
 
   li:first-letter {
     text-transform: capitalize;
