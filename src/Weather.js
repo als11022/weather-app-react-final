@@ -56,7 +56,7 @@ return (
       onChange={handleCityChange}
     />
     </div>
-    <div className="col-3">
+    <div className="col-md-3 col-sm-12">
     <button
       className="btn btn-outline-secondary mb-3"
       type="submit"
