@@ -9,7 +9,7 @@ function App() {
     <div className="App">
 <div className="container">
         <div className="weather-wrapper">
-          <div className="weather-app-day">
+          <div className="weather-app">
             <Weather defaultCity="Boston" />
           </div>
           <Footer />
